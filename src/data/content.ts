@@ -1,4 +1,3 @@
-// ─── MODEL: Content repository ──────────────────────────────────
 import type { Testimonial, Client, Slide, NavItem, Stat } from '@/types'
 
 export const testimonials: Testimonial[] = [
@@ -37,10 +36,10 @@ export const navItems: NavItem[] = [
 ]
 
 export const stats: Stat[] = [
-  { value: '9+',  label: 'Anos de experiencia' },
-  { value: '80+', label: 'Projetos entregues'  },
-  { value: '3x',  label: 'Premiada'            },
-  { value: '40+', label: 'Clientes'            },
+  { value: '9+',  label: 'Anos de experiencia'  },
+  { value: '80+', label: 'Projetos entregues'   },
+  { value: '3x',  label: 'Premiada'             },
+  { value: '40+', label: 'Clientes'             },
 ]
 
 export const tickerItems: string[] = [

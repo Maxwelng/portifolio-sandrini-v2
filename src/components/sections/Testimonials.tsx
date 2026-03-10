@@ -5,14 +5,12 @@ export function Testimonials() {
   return (
     <section className={styles.sec}>
       <div className={`rv ${styles.lbl}`}>Depoimentos</div>
-      <h2 className={`rv ${styles.h2}`}>
-        O que dizem<br /><em>os clientes</em>
-      </h2>
+      <h2 className={`rv ${styles.h2}`}>O que dizem<br /><em>os clientes</em></h2>
       <div className={styles.grid}>
         {testimonials.map(t => (
           <article key={t.id} className={`rv ${styles.card}`}>
-            <div className={styles.quote}>&ldquo;</div>
-            <blockquote className={styles.text}>&ldquo;{t.text}&rdquo;</blockquote>
+            <div className={styles.quoteIcon}>&#8220;</div>
+            <blockquote className={styles.text}>{t.text}</blockquote>
             <div className={styles.who}>
               <div className={styles.av}>{t.initials}</div>
               <div>

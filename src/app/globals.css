@@ -1,10 +1,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#0c0c0c;
-  --cream:#f2efea;
-  --stone:#e5e1d8;
-  --mist:#b8b3a8;
-  --ghost:#9a9690;
+  --ink:#0c0c0c;--cream:#f2efea;--stone:#e5e1d8;
+  --mist:#b8b3a8;--ghost:#9a9690;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Outfit',sans-serif;
   --pad:clamp(24px,5vw,80px);

@@ -1,7 +1,6 @@
-.sec{text-align:center;padding:clamp(80px,13vw,154px) var(--pad) clamp(108px,15vw,180px)}
-.lbl{display:flex;align-items:center;justify-content:center;gap:10px;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ghost);margin-bottom:18px}
-.lbl::before{content:'';display:block;width:24px;height:1px;background:var(--mist)}
-.h2{font-family:var(--serif);font-size:clamp(48px,9vw,120px);font-weight:300;line-height:.88;letter-spacing:-.03em;margin-bottom:clamp(26px,4vw,44px)}
-.h2 em{font-style:italic}
-.btn{display:inline-flex;align-items:center;gap:11px;background:var(--ink);color:var(--cream);padding:15px 38px;border-radius:999px;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .25s}
-.btn:hover{background:#1c1c1c}
+.sec { text-align: center; padding: clamp(80px,13vw,154px) var(--pad) clamp(108px,15vw,180px); }
+.lbl { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: .58rem; letter-spacing: .26em; text-transform: uppercase; color: var(--ghost); margin-bottom: 18px; }
+.h2 { font-family: var(--serif); font-size: clamp(48px,9vw,120px); font-weight: 300; line-height: .88; letter-spacing: -.03em; margin-bottom: clamp(26px,4vw,44px); }
+.h2 em { font-style: italic; }
+.btn { display: inline-flex; align-items: center; gap: 11px; background: var(--ink); color: var(--cream); padding: 15px 38px; border-radius: 999px; font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; transition: background .25s; }
+.btn:hover { background: #1c1c1c; }

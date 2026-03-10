@@ -1,9 +1,7 @@
 'use client'
 import { useScrollCarousel } from '@/viewmodels/useScrollCarousel'
-import { cn } from '@/lib/utils'
 import styles from './ScrollCarousel.module.css'
 
-// View: receives all scroll state from ViewModel, renders only
 export function ScrollCarousel() {
   const vm = useScrollCarousel()
 
@@ -15,19 +13,17 @@ export function ScrollCarousel() {
           {vm.slides.map((slide, i) => (
             <div
               key={slide.id}
-              className={cn(styles.slide, i === vm.activeIndex && styles.active)}
-              role="img"
-              aria-label={slide.alt}
+              className={`${styles.slide} ${i === vm.activeIndex ? styles.active : ''}`}
             >
               <div className={styles.bg} style={{ background: slide.background }} />
             </div>
           ))}
 
-          <div className={styles.dots} aria-hidden="true">
+          <div className={styles.dots}>
             {vm.slides.map((_, i) => (
               <div
                 key={i}
-                className={cn(styles.dot, i === vm.activeIndex && styles.dotActive)}
+                className={`${styles.dot} ${i === vm.activeIndex ? styles.dotActive : ''}`}
               />
             ))}
           </div>

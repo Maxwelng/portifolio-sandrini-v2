@@ -1,16 +1,12 @@
 'use client'
 import { useEffect } from 'react'
-
-export function useCursor(): void {
+export function useCursor() {
   useEffect(() => {
     const cur = document.getElementById('cur')
     const fol = document.getElementById('fol')
     if (!cur || !fol) return
-
     let mx = 0, my = 0, fx = 0, fy = 0, raf = 0
-
-    const onMove = (e: MouseEvent) => { mx = e.clientX; my = e.clientY }
-
+    const onMove = (e) => { mx = e.clientX; my = e.clientY }
     const loop = () => {
       cur.style.left = mx + 'px'; cur.style.top = my + 'px'
       fx += (mx - fx) * 0.1; fy += (my - fy) * 0.1
@@ -18,23 +14,13 @@ export function useCursor(): void {
       raf = requestAnimationFrame(loop)
     }
     raf = requestAnimationFrame(loop)
-
     const expand = () => fol.classList.add('expanded')
     const shrink = () => fol.classList.remove('expanded')
-    const targets = document.querySelectorAll('a, button')
-    targets.forEach(el => {
+    document.querySelectorAll('a,button').forEach(el => {
       el.addEventListener('mouseenter', expand)
       el.addEventListener('mouseleave', shrink)
     })
     document.addEventListener('mousemove', onMove)
-
-    return () => {
-      cancelAnimationFrame(raf)
-      document.removeEventListener('mousemove', onMove)
-      targets.forEach(el => {
-        el.removeEventListener('mouseenter', expand)
-        el.removeEventListener('mouseleave', shrink)
-      })
-    }
+    return () => { cancelAnimationFrame(raf); document.removeEventListener('mousemove', onMove) }
   }, [])
 }

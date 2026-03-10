@@ -1,5 +1,7 @@
-// ─── MODEL: Domain Types ─────────────────────────────────────────
+// ─────────────────────────────────────────────────────────
+// MODEL — Domain Types
 // Pure data shapes. Zero logic, zero side-effects.
+// ─────────────────────────────────────────────────────────
 
 export interface Service {
   id: string
@@ -23,7 +25,7 @@ export interface Client {
 
 export interface Slide {
   id: string
-  background: string   // CSS gradient or url('/images/...')
+  background: string   // CSS gradient string or url('/images/...')
   alt: string
 }
 
@@ -36,4 +38,27 @@ export interface NavItem {
 export interface Stat {
   value: string
   label: string
+}
+
+// ─── PROJECT (case study) ──────────────────────────────────
+export interface ProjectImage {
+  src: string
+  alt: string
+  span?: 'full' | 'half'
+}
+
+export interface Project {
+  id: string
+  index: string
+  title: string
+  client: string
+  category: string
+  year: string
+  description: string
+  longDescription: string
+  services: string[]
+  heroBackground: string
+  images: ProjectImage[]
+  color: string
+  textColor?: 'light' | 'dark'
 }

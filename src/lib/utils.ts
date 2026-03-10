@@ -1,4 +1,4 @@
-// Utility: merge class names (cn helper)
+// Utility: merge class names
 export function cn(...classes: (string | undefined | false | null)[]): string {
   return classes.filter(Boolean).join(' ')
 }

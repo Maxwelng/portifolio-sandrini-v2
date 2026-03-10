@@ -5,7 +5,7 @@ export function About() {
   return (
     <section className={styles.sec} id="sobre">
       <div className={styles.grid}>
-        <div>
+        <div className={styles.left}>
           <div className={`rv ${styles.lbl}`}>Sobre</div>
           <h2 className={`rv ${styles.h2}`}>
             Design com<br /><em>intenção</em><br /><strong>e alma.</strong>
@@ -19,10 +19,10 @@ export function About() {
             do contexto e das pessoas que a marca precisa tocar.
           </p>
           <div className={styles.stats}>
-            {stats.map((stat, i) => (
+            {stats.map((s, i) => (
               <div key={i} className="rv">
-                <div className={styles.statVal}>{stat.value}</div>
-                <div className={styles.statLbl}>{stat.label}</div>
+                <div className={styles.statN}>{s.value}</div>
+                <div className={styles.statL}>{s.label}</div>
               </div>
             ))}
           </div>
