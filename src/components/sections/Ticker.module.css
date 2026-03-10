@@ -1,0 +1,4 @@
+.ticker{overflow:hidden;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:12px 0;background:var(--ink)}
+.track{display:flex;white-space:nowrap;animation:ticker 26s linear infinite}
+.item{font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--cream);padding:0 22px;letter-spacing:.04em}
+.item::after{content:'·';margin-left:22px;opacity:.4}

@@ -1,0 +1,27 @@
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad);transition:background .3s}
+.scrolled{background:rgba(242,239,234,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(12,12,12,.06)}
+.logo{font-family:var(--serif);font-size:.96rem;font-weight:600;text-decoration:none;color:var(--ink);letter-spacing:.03em}
+.list{display:flex;list-style:none}
+.list li{padding:0 20px}
+.list a{font-size:.64rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;color:var(--ghost);transition:color .2s}
+.list a:hover{color:var(--ink)}
+.num{font-size:.5rem;margin-right:4px;opacity:.5}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:none;padding:0}
+.ham span{display:block;width:20px;height:1px;background:var(--ink);transition:.28s}
+.mob{display:none;position:fixed;inset:0;z-index:250;background:var(--ink);flex-direction:column;justify-content:center;align-items:center;gap:22px}
+.mob.open{display:flex}
+.mob a{font-family:var(--serif);font-size:clamp(2rem,6vw,3.2rem);font-weight:600;color:var(--cream);text-decoration:none;opacity:0;animation:fadeUp .35s ease forwards}
+.mob a:nth-child(1){animation-delay:.06s}
+.mob a:nth-child(2){animation-delay:.13s}
+.mob a:nth-child(3){animation-delay:.20s}
+.mob a:nth-child(4){animation-delay:.27s}
+.pill{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);z-index:300;display:flex;align-items:center;background:rgba(242,239,234,.9);backdrop-filter:blur(18px);border:1px solid rgba(12,12,12,.09);border-radius:999px;padding:12px 24px;white-space:nowrap;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.pillLogo{font-family:var(--serif);font-size:.88rem;font-weight:600;text-decoration:none;color:var(--ink);margin-right:26px;letter-spacing:.02em}
+.pillLogo sup{font-size:.48em;font-weight:300;font-style:italic;vertical-align:super}
+.sep{width:1px;height:13px;background:rgba(12,12,12,.12);margin:0 20px}
+.pillLinks{display:flex;gap:18px;list-style:none}
+.pillLinks a{font-size:.64rem;font-weight:400;letter-spacing:.13em;text-transform:uppercase;text-decoration:none;color:var(--ghost);transition:color .2s}
+.pillLinks a:hover{color:var(--ink)}
+.pillCta{margin-left:22px;background:var(--ink);color:var(--cream);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;text-decoration:none;padding:8px 18px;border-radius:999px;transition:background .22s}
+.pillCta:hover{background:#1e1e1e}
+@media(max-width:680px){.list,.logo{display:none}.ham{display:flex}.pill{bottom:14px;padding:10px 15px}.pillLogo{margin-right:10px;font-size:.78rem}.sep{margin:0 10px}.pillLinks{gap:10px}.pillLinks a{font-size:.58rem}.pillCta{margin-left:10px;padding:7px 13px;font-size:.58rem}}
