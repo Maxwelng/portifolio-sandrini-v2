@@ -7,16 +7,16 @@ export const testimonials: Testimonial[] = [
 ]
 
 export const clients: Client[] = [
-  { id: 'coletivo-norte', name: 'Coletivo Norte'  },
-  { id: 'camada',         name: 'Revista Camada'  },
-  { id: 'botanica',       name: 'Botanica Co.'    },
-  { id: 'arco',           name: 'Arco Arquitetura' },
-  { id: 'noma',           name: 'Noma Cafe'       },
-  { id: 'luz',            name: 'Luz Studio'      },
-  { id: 'raiz',           name: 'Raiz Design'     },
-  { id: 'moca-flor',      name: 'Moca Flor'       },
-  { id: 'atelier-duna',   name: 'Atelier Duna'    },
-  { id: 'plano-b',        name: 'Plano B'         },
+  { id: 'coletivo-norte', name: 'Coletivo Norte',   projectId: 'coletivo-norte'  },
+  { id: 'camada',         name: 'Revista Camada',   projectId: 'revista-camada'  },
+  { id: 'botanica',       name: 'Botanica Co.',      projectId: 'botanica-co'     },
+  { id: 'arco',           name: 'Arco Arquitetura',  projectId: 'arco-arquitetura' },
+  { id: 'noma',           name: 'Noma Cafe',         projectId: 'noma-cafe'       },
+  { id: 'luz',            name: 'Luz Studio',        projectId: 'luz-studio'      },
+  { id: 'raiz',           name: 'Raiz Design',       projectId: undefined         },
+  { id: 'moca-flor',      name: 'Moca Flor',         projectId: undefined         },
+  { id: 'atelier-duna',   name: 'Atelier Duna',      projectId: undefined         },
+  { id: 'plano-b',        name: 'Plano B',           projectId: undefined         },
 ]
 
 export const slides: Slide[] = [

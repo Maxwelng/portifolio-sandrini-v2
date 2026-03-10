@@ -2,8 +2,8 @@
     min-height:80svh;
     display:flex;
     flex-direction:column;
-    justify-content:flex-end;
-    padding:0 var(--pad) clamp(56px,9vw,104px);
+    justify-content:center;
+    padding:0 var(--pad) clamp(56px,9vw,86px);
     overflow:hidden;
   }
   

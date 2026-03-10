@@ -21,6 +21,7 @@ export interface Testimonial {
 export interface Client {
   id: string
   name: string
+  projectId?: string
 }
 
 export interface Slide {
