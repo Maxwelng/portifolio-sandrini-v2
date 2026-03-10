@@ -12,7 +12,7 @@ export function Navbar() {
         ))}
       </div>
       <nav className={[styles.nav, vm.isScrolled ? styles.scrolled : ''].join(' ')}>
-        <a href="#" className={styles.logo}>Sandrini Espindula Maciel\xae</a>
+        <a href="#" className={styles.logo}>Sandrini Espindula Maciel</a>
         <ul className={styles.list}>
           {vm.items.map(item => (
             <li key={item.href}><a href={item.href}><span className={styles.num}>({item.number})</span>{item.label}</a></li>
@@ -25,7 +25,7 @@ export function Navbar() {
         </button>
       </nav>
       <div className={styles.pill}>
-        <a href="#" className={styles.pillLogo}>Sandrini<sup>\xae</sup></a>
+        <a href="#" className={styles.pillLogo}>Sandrini</a>
         <div className={styles.sep} />
         <ul className={styles.pillLinks}>
           {vm.items.slice(0,3).map(item => (
