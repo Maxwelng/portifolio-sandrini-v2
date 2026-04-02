@@ -7,16 +7,15 @@ export const testimonials: Testimonial[] = [
 ]
 
 export const clients: Client[] = [
-  { id: 'coletivo-norte', name: 'Coletivo Norte',   projectId: 'coletivo-norte'  },
-  { id: 'camada',         name: 'Revista Camada',   projectId: 'revista-camada'  },
-  { id: 'botanica',       name: 'Botanica Co.',      projectId: 'botanica-co'     },
-  { id: 'arco',           name: 'Arco Arquitetura',  projectId: 'arco-arquitetura' },
-  { id: 'noma',           name: 'Noma Cafe',         projectId: 'noma-cafe'       },
-  { id: 'luz',            name: 'Luz Studio',        projectId: 'luz-studio'      },
-  { id: 'raiz',           name: 'Raiz Design',       projectId: undefined         },
-  { id: 'moca-flor',      name: 'Moca Flor',         projectId: undefined         },
-  { id: 'atelier-duna',   name: 'Atelier Duna',      projectId: undefined         },
-  { id: 'plano-b',        name: 'Plano B',           projectId: undefined         },
+  { id: 'coletivo-norte', name: 'Coletivo Norte', projectId: 'coletivo-norte' },
+  { id: 'nucleo',         name: 'Nucleo',         projectId: 'nucleo' },
+  { id: 'vertice',        name: 'Vertice',        projectId: 'vertice' },
+  { id: 'je',             name: 'JE',             projectId: 'je' },
+  { id: 'cume',           name: 'Cume',           projectId: 'cume' },
+  { id: 'area',           name: 'Area',           projectId: 'area' },
+  { id: 'forma',          name: 'Forma',          projectId: 'forma' },
+  { id: 'mirian',         name: 'Mirian',         projectId: 'mirian' },
+  { id: 'canelado',       name: 'Canelado',       projectId: 'canelado' },
 ]
 
 export const slides: Slide[] = [
