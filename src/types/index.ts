@@ -62,4 +62,5 @@ export interface Project {
   images: ProjectImage[]
   color: string
   textColor?: 'light' | 'dark'
+  showInProjects?: boolean
 }

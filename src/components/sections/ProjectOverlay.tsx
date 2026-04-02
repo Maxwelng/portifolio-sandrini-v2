@@ -33,6 +33,16 @@ export function ProjectOverlay({ project, onClose }: Props) {
   if (!project) return null
 
   const isLight = project.textColor !== 'dark'
+  const isHeroImage = project.heroBackground.trim().startsWith('url(')
+  const heroStyle = isHeroImage
+    ? {
+        backgroundColor: project.color,
+        backgroundImage: project.heroBackground,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover' as const,
+      }
+    : { background: project.heroBackground }
 
   return (
     <div
@@ -50,7 +60,7 @@ export function ProjectOverlay({ project, onClose }: Props) {
       {/* ── HERO ───────────────────────────────── */}
       <div
         className={styles.hero}
-        style={{ background: project.heroBackground }}
+        style={heroStyle}
       >
         <div className={`${styles.heroInner} ${isLight ? styles.light : styles.dark}`}>
           <div className={styles.heroMeta}>
@@ -103,14 +113,32 @@ export function ProjectOverlay({ project, onClose }: Props) {
               key={i}
               className={`${styles.imageItem} ${img.span === 'half' ? styles.half : styles.full}`}
             >
+              {/*
+                `src` can be either a CSS gradient or a public image URL wrapped in `url(...)`.
+                Images need explicit background sizing/positioning so they don't tile or crop awkwardly.
+              */}
+              {(() => {
+                const isImage = img.src.trim().startsWith('url(')
+                const style = isImage
+                  ? {
+                      backgroundImage: img.src,
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundSize: 'contain' as const,
+                    }
+                  : { background: img.src }
+
+                return (
               <div
                 className={styles.imagePlaceholder}
-                style={{ background: img.src }}
+                style={style}
                 role="img"
                 aria-label={img.alt}
               >
                 <span className={styles.imageCaption}>{img.alt}</span>
               </div>
+                )
+              })()}
             </div>
           ))}
         </div>

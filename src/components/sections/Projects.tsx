@@ -6,6 +6,22 @@ import styles from './Projects.module.css'
 
 export function Projects() {
   const vm = useProjectOverlay()
+  const visibleProjects = projects.filter(project => project.showInProjects !== false)
+  const getCardBackground = (heroBackground: string, color: string) => {
+    const isImageBackground = heroBackground.trim().startsWith('url(')
+
+    return {
+      isImageBackground,
+      style: isImageBackground
+        ? {
+            backgroundColor: color,
+            backgroundImage: heroBackground,
+          }
+        : { background: heroBackground },
+    }
+  }
+  const shouldContainCardImage = (projectId: string) =>
+    projectId === 'coletivo-norte' || projectId === 'núcleo'
 
   return (
     <>
@@ -20,7 +36,7 @@ export function Projects() {
             </h2>
             <button
               className={`rv ${styles.all}`}
-              onClick={() => vm.openProject(projects[0])}
+              onClick={() => vm.openProject(visibleProjects[0])}
             >
               Ver todos
             </button>
@@ -29,7 +45,10 @@ export function Projects() {
 
         {/* ── PROJECT GRID ───────────────────── */}
         <div className={styles.grid}>
-          {projects.map((project, i) => (
+          {visibleProjects.map((project, i) => {
+            const cardBackground = getCardBackground(project.heroBackground, project.color)
+
+            return (
             <button
               key={project.id}
               className={`${styles.card} ${i === 0 || i === 1 ? styles.cardLarge : styles.cardSmall} rv`}
@@ -38,8 +57,8 @@ export function Projects() {
             >
               {/* Background */}
               <div
-                className={styles.cardBg}
-                style={{ background: project.heroBackground }}
+                className={`${styles.cardBg} ${cardBackground.isImageBackground ? (shouldContainCardImage(project.id) ? styles.cardBgContain : styles.cardBgCover) : ''}`}
+                style={cardBackground.style}
               />
 
               {/* Hover overlay */}
@@ -60,7 +79,8 @@ export function Projects() {
               {/* Year tag */}
               <div className={styles.cardYear}>{project.year}</div>
             </button>
-          ))}
+            )
+          })}
         </div>
 
       </section>
