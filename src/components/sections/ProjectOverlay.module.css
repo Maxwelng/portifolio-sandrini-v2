@@ -192,8 +192,8 @@
 .imageGrid {
   padding: 0 var(--pad) clamp(52px, 8vw, 96px);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(8px, 1.2vw, 16px);
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 2vw, 28px);
 }
 
 .full {
@@ -205,24 +205,34 @@
 }
 
 .imagePlaceholder {
-  aspect-ratio: 16 / 9;
+  min-height: clamp(380px, 48vw, 860px);
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 12px;
   display: flex;
   align-items: flex-end;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.full .imagePlaceholder {
-  aspect-ratio: 21 / 9;
+.imageFigure {
+  margin: 0;
+}
+
+.imageMedia {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
 }
 
 .imageCaption {
   font-size: 0.56rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.35);
-  padding: 14px 18px;
+  color: rgba(58, 56, 53, 0.72);
+  padding: 12px 4px 0;
   position: relative;
   z-index: 1;
 }
@@ -290,9 +300,6 @@
     border-right: none;
     border-bottom: 1px solid rgba(12, 12, 12, 0.08);
     padding: 20px var(--pad);
-  }
-  .imageGrid {
-    grid-template-columns: 1fr;
   }
   .half,
   .full {

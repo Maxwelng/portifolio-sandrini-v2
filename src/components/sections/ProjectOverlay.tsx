@@ -111,32 +111,32 @@ export function ProjectOverlay({ project, onClose }: Props) {
           {project.images.map((img, i) => (
             <div
               key={i}
-              className={`${styles.imageItem} ${img.span === 'half' ? styles.half : styles.full}`}
+              className={`${styles.imageItem} ${styles.full}`}
             >
-              {/*
-                `src` can be either a CSS gradient or a public image URL wrapped in `url(...)`.
-                Images need explicit background sizing/positioning so they don't tile or crop awkwardly.
-              */}
               {(() => {
                 const isImage = img.src.trim().startsWith('url(')
-                const style = isImage
-                  ? {
-                      backgroundImage: img.src,
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: 'contain' as const,
-                    }
-                  : { background: img.src }
+
+                if (isImage) {
+                  const imagePath = img.src.trim().slice(5, -2)
+
+                  return (
+                    <figure className={styles.imageFigure}>
+                      <img
+                        className={styles.imageMedia}
+                        src={imagePath}
+                        alt={img.alt}
+                      />
+                    </figure>
+                  )
+                }
 
                 return (
-              <div
-                className={styles.imagePlaceholder}
-                style={style}
-                role="img"
-                aria-label={img.alt}
-              >
-                <span className={styles.imageCaption}>{img.alt}</span>
-              </div>
+                  <div
+                    className={styles.imagePlaceholder}
+                    style={{ background: img.src }}
+                    role="img"
+                    aria-label={img.alt}
+                  />
                 )
               })()}
             </div>
